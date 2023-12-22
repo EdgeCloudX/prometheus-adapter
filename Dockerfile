@@ -1,9 +1,10 @@
-FROM golang:1.19 as builder
+FROM golang:1.18 as builder
 RUN go version
 RUN  go env -w GOPROXY=https://goproxy.io,direct
 RUN  go env -w GO111MODULE=on
 
 COPY go.mod .
+COPY go.sum .
 RUN go mod download
 
 COPY pkg pkg
