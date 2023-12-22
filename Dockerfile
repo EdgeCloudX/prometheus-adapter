@@ -3,6 +3,8 @@ RUN  go env -w GOPROXY=https://goproxy.io,direct
 RUN  go env -w GO111MODULE=on
 WORKDIR .
 COPY . .
+RUN ls
+RUN pwd
 RUN make build
 
 FROM alpine:3.18
