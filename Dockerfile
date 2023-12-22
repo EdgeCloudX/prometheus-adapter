@@ -1,8 +1,7 @@
 FROM golang:1.18 as builder
-RUN go version
 RUN  go env -w GOPROXY=https://goproxy.io,direct
 RUN  go env -w GO111MODULE=on
-
+WORKDIR .
 COPY . .
 RUN make build
 
