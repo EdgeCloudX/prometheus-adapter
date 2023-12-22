@@ -1,8 +1,8 @@
 FROM golang:1.19 as builder
 RUN  go env -w GOPROXY=https://goproxy.io,direct
 RUN  go env -w GO111MODULE=on
-WORKDIR .
-COPY . .
+WORKDIR go/src
+COPY . go/src
 RUN ls
 RUN pwd
 RUN make build
