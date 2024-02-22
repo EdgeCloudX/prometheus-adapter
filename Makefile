@@ -1,8 +1,7 @@
 # Override the default common all.
 CGO_ENABLED:=0
-DOCKER_PLATFORMS=linux/arm64,linux/amd64
+DOCKER_PLATFORMS=linux/arm64,linux/amd64,linux/ppc64
 REGISTRY=harbor.ctyuncdn.cn/ecf-edge-dev/coreos/prometheus-adapter
-#REGISTRY=tjldockerdemo/ipmi_exporter
 TAG?=0.10.0
 IMAGE:=$(REGISTRY):$(TAG)
 ifeq ($(ENABLE_JOURNALD), 1)
