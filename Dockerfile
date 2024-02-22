@@ -7,6 +7,6 @@ RUN ls -a
 RUN make build
 
 FROM alpine:latest
-COPY --from=builder /go/src/sigs.k8s.io/prometheus-adapter/adapter /
+COPY --from=builder /go/src/prometheus-adapter/adapter /
 USER 65534
 ENTRYPOINT ["/adapter"]
