@@ -2,7 +2,7 @@
 CGO_ENABLED:=0
 DOCKER_PLATFORMS=linux/arm64,linux/amd64
 REGISTRY=harbor.ctyuncdn.cn/ecf-edge-dev/coreos/prometheus-adapter
-TAG?=0.10.0
+TAG?=v0.10.0
 IMAGE:=$(REGISTRY):$(TAG)
 ifeq ($(ENABLE_JOURNALD), 1)
 	CGO_ENABLED:=1
