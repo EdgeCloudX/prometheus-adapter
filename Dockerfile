@@ -1,12 +1,9 @@
 FROM golang:1.19 as builder
 ENV GOPATH /gopath/
 ENV PATH $GOPATH/bin/$PATH
-RUN  go env -w GOPROXY=https://goproxy.io,direct
-RUN  go env -w GO111MODULE=on
-WORKDIR go/src
-COPY . go/src
-RUN ls
-RUN pwd
+COPY . /go/src/prometheus-adapter/
+WORKDIR /go/src/prometheus-adapter/
+RUN ls -a
 RUN make build
 
 FROM alpine:latest
